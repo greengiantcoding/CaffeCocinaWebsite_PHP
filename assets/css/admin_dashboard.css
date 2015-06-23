@@ -1,0 +1,83 @@
+/* General Styling */
+
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+#body{
+	background-color: black;
+	color: white;
+}
+	.centerText{
+		text-align: center;
+	}
+
+/* Admin Navigation Bar Styling */
+
+#navbar{
+	padding: 3px;
+	background-color: orange;
+	font-weight: bold;
+}
+	.navbarPill{
+		margin-right: 15px;
+		margin-left: 15px;
+	}
+	.navbarOn{
+		border: 2px solid black;
+		border-radius: 10px;
+		background-color: black;
+	}
+	.navbarOff{
+		border: 2px solid black;
+		border-radius: 10px;
+	}
+	.navbarLinks{
+		color: black;
+	}
+	.navbarLinksOn{
+		color: orange;
+	}
+	#signOut{
+		margin-right: 25px;
+	}
+
+/* Admin Menu Forms Page Styling */
+
+.menuForm{
+	width: 700px;
+	margin: 0 auto;
+}
+	.menuFormLegend{
+		width: 700px;
+		margin: 0 auto;
+		color: orange;
+	}
+		.legendOrange{
+			color: orange;
+		}
+	.menuFormLabel{
+		display: inline-block;
+		text-align: right;
+		vertical-align: top;
+		width: 150px;
+	}
+	.menuFormInput{
+		color: black;
+		display: inline-block;
+		width: 350px;
+		height: 40px;
+		border-radius: 5px;
+	}
+	.menuFormTextarea{
+		color: black;
+		display: inline-block;
+		width: 350px;
+		height: 75px;
+		border-radius: 5px;
+	}
+	.formButton{
+		width: 350px;
+		margin-left: 150px;
+	}

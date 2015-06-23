@@ -1,0 +1,135 @@
+	body{
+		background-image: url('/assets/images/orange_wall.jpg');
+		background-size: cover;
+	}
+	.contentDiv{
+		padding: 10px;
+      	margin-top: 50px;
+      	color: orange;
+      	background-color: black;
+      	border: 2px solid white;
+      	border-radius: 5px;
+      	box-shadow: 10px 10px 10px black;
+	}
+	.centerText{
+		text-align: center;
+	}
+		
+		.underline{
+			text-decoration: underline;
+		}
+
+/*	NAVBAR STYLING	*/
+
+.navbarHeader{
+	background-image: url('/assets/images/wood_pattern.jpg');
+	min-height: 150px;
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-bottom: 5px;
+	margin-bottom: 35px;
+}
+	.navbarLogo{
+		background-image: url('/assets/images/orange_logo_100x77.png');
+		height: 100px;
+		width: 77px;
+		background-repeat: no-repeat;
+	}
+		.navbarSpacer{
+			padding-left: 25px;
+			margin-top: 40px;
+		}
+
+		.navLinkBack{
+			padding-top: 20px;
+			opacity: 0.85;
+			min-height: 50px;
+		}
+		.navLinks{
+			margin-left: 2px;
+			margin-right: 2px;
+			margin-top: 20px;
+			padding-top: 20px;
+			border-radius: 50%;
+			height: 70px;
+			width: 70px;
+			text-decoration: none;
+			text-align: center;
+			display: inline-block;
+			font-size: 18px;
+		}
+		.navLinksDropdown{
+			margin: 0 auto;
+			background-color: rgb(197,112,4);
+		}
+			.navLinksDropdownColor{
+				color: black;
+			}
+				.currentDropdown{
+					font-weight: bold;		
+				}
+
+			.navLinkOff{
+				background-color: black;
+			}
+			.navLinkOn{
+				background-color: rgb(197,112,4);
+			}
+			.navLinkColorOn{
+				height: 125px;
+				color: black;
+			}
+			.navLinkColorOff{
+				height: 125px;
+				color: rgb(197,112,4);
+			}
+
+			.listLinkBack{
+				border-radius: 25px;
+				background-color: black;
+				font-weight: bold;
+			}
+				.linkColor{
+					color: rgb(197,112,4);
+				}
+			.listLinkBackOn{
+				border-radius: 25px;
+				background-color: rgb(197,112,4);
+				font-weight: bold;
+			}
+
+				.listLinkColor{
+					text-decoration: none;
+					color: rgb(197,112,4);
+					background-color: none;
+					font-size: 20px;
+					padding: 2px;
+					border-radius: 2px;
+				}
+				.listLinkColorOn{
+					text-decoration: none;
+					color: black;
+					background-color: transparent;
+					font-size: 20px;
+					padding: 2px;
+					border-radius: 2px;
+				}
+				.linkColorOn{
+					color: black;
+				}
+			.centerCart{
+				
+				text-align: center;
+				margin-left: 15px;
+				background-color: black;
+				color: red;
+			}
+	.toggleBox{
+		width: 40px;
+		height: 40px;
+		background-color: orange;
+	}
+
+
+
+
