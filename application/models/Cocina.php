@@ -26,16 +26,24 @@ class Cocina extends CI_Controller {
 
 // PHOTO ALBUM QUERIES //
 
-	public function allPhotos(){
+	public function getAllPhotos(){
 		$query = "SELECT * FROM photo";
 		$allPhotos = $this->db->query($query)->result_array();
 		return $allPhotos;
 	}
 
 	public function addPhoto($photoInfo){
-		$query = "INSERT INTO photo (caption, image, created_at) VALUES (?,?, NOW())";
-		$photoAdded = $this->db->query($query, array('caption' => $photoInfo['caption'], 'image' => $photoInfo['photo']));
+		$query = "INSERT INTO photo (file_name, created_at) VALUES (?, NOW())";
+		$photoAdded = $this->db->query($query, array('file_name' => $photoInfo['file_name']));
 		return;
+	}
+
+	public function deletePhoto($photoID){
+		$query = "DELETE FROM photo WHERE id = ?";
+		$photoDeleted = $this->db->query($query, array('id' => $photoID['id']));
+		$photoQuery = "SELECT * FROM photo";
+		$remainingPhotos = $this->db->query($photoQuery)->result_array();
+		return $remainingPhotos;
 	}
 
 // MENU QUERIES // 
@@ -85,6 +93,65 @@ class Cocina extends CI_Controller {
 	public function addhotDrink($hotDrinkInfo){
 		$query = "INSERT INTO hot_drink (title, description, price_8oz, price_12oz, price_16oz, price_20oz) VALUES (?,?,?,?,?,?)";
 		$hotDrinkAdded = $this->db->query($query, array('title' => $hotDrinkInfo['title'], 'description' => $hotDrinkInfo['description'], 'price_8oz' => $hotDrinkInfo['price_8oz'], 'price_12oz' => $hotDrinkInfo['price_12oz'], 'price_16oz' => $hotDrinkInfo['price_16oz'], 'price_20oz' => $hotDrinkInfo['price_20oz']));
+		return;
+	}
+
+	public function getAllSalads(){
+		$query = "SELECT * FROM salad";
+		$allSalads = $this->db->query($query)->result_array();
+		return $allSalads;
+	}
+
+	public function addSalad($saladInfo){
+		$query = "INSERT INTO salad (title, description, full_price, half_price) VALUES (?,?,?,?)";
+		$saladAdded = $this->db->query($query, array('title' => $saladInfo['title'], 'description' => $saladInfo['description'], 'full_price' => $saladInfo['full_price'], 'half_price' => $saladInfo['half_price']));
+	}
+
+	public function getAllSoups(){
+		$query = "SELECT * FROM soup";
+		$allSoups = $this->db->query($query)->result_array();
+		return $allSoups;
+	}
+
+	public function addSoup($soupInfo){
+		$query = "INSERT INTO soup (title, description, full_price, half_price) VALUES (?,?,?,?)";
+		$soupAdded = $this->db->query($query, array('title' => $soupInfo['title'], 'description' => $soupInfo['description'], 'full_price' => $soupInfo['full_price'], 'half_price' => $soupInfo['half_price']));
+		return;
+	}
+
+	public function getAllBurgers(){
+		$query = "SELECT * FROM burger";
+		$allBurgers = $this->db->query($query)->result_array();
+		return $allBurgers;
+	}
+
+	public function addBurger($burgerInfo){
+		$query = "INSERT INTO burger (title, description, price) VALUES (?,?,?)";
+		$burgerAdded = $this->db->query($query, array('title' => $burgerInfo['title'], 'description' => $burgerInfo['description'], 'price' => $burgerInfo['price']));
+		return;
+	}
+
+	public function getAllFixings(){
+		$query = "SELECT * FROM sandwich_fixings";
+		$allFixings = $this->db->query($query)->result_array();
+		return $allFixings;
+	}
+
+	public function addFixing($fixingInfo){
+		$query = "INSERT INTO sandwich_fixings (category, type) VALUES (?,?)";
+		$fixingAdded = $this->db->query($query, array('category' => $fixingInfo['category'], 'type' => $fixingInfo['type']));
+		return;
+	}
+
+	public function getAllKids(){
+		$query = "SELECT * FROM kid_items";
+		$allKids = $this->db->query($query)->result_array();
+		return $allKids;
+	}
+
+	public function addKid($kidInfo){
+		$query = "INSERT INTO kid_items (title, description, price) VALUES (?,?,?)";
+		$kidAdded = $this->db->query($query, array('title' => $kidInfo['title'], 'description' => $kidInfo['description'], 'price' => $kidInfo['price']));
 		return;
 	}
 }

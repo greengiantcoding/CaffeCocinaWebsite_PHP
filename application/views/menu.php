@@ -16,7 +16,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body id='body'>
 
 
-
 <!-- HEADER/NAVBAR -->
 	<div class='col-xs-12 navbarHeader navbar-default'>
 		
@@ -58,11 +57,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 <!-- END HEADER/NAVBAR -->
 
+<div class='row'>&nbsp;</div>
 <!-- Main Body Content -->
-	
-	
- 
-<div class='col-xs-10 col-xs-offset-1'>
+
+<div class='allMenus'>
 	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 	 	<!-- Indicators -->
 	 	<ol class="carousel-indicators">
@@ -74,136 +72,210 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	  	<!-- Wrapper for slides -->
 	  	<div class="carousel-inner" role="listbox">
-	    	<div class="item active">
-	     		
+
+	  	<!-- Drinks Menu -->
+	    	<div class="item active"> 		
 	      		<div class="carousel-caption">
 	        		<h5><span class='activeMenu'>Drinks</span>&nbsp;&nbsp;Breakfast&nbsp;&nbsp;Lunch&nbsp;&nbsp;Treats</h5>
 	      		</div>
 	      		<div class='centerText'>
-					<!-- Blank Blackboard -->
 					<div class='contentDiv'>
-						<h2 class='centerText menuHeaderSpace'><span class='underlineHeader'>Drinks</span></h2>
 						<div class='row'>
 							<fieldset class='fieldsetting'>
-								<legend class='legendColor'><h3>Hot Drinks</h3></legend>
+								<legend class='legendColor'><h2>Hot Drinks</h2></legend>
 									<table>
-<?php 									foreach($allHotDrinks AS $hotDrink){ 	?>
+										<thead>
 											<tr>
-												<td class='drinkTitles'><h4 class='lunchTitles'><?= $hotDrink['title'] ?></h4></td>
-<?php 											if($hotDrink['price_8oz'] != '0.00'){		?>
-													<td class='drinkPrices'>$<?= number_format((float)$hotDrink['price_8oz'], 2, '.', '') ?></td>
-<?php 											}
-												else{		?>
-													<td></td>
-<?php 											}			?>
-												<td class='drinkPrices'>$<?= number_format((float)$hotDrink['price_12oz'], 2, '.', '') ?></td>
-												<td class='drinkPrices'>$<?= number_format((float)$hotDrink['price_16oz'], 2, '.', '') ?></td>
-												<td class='drinkPrices'>$<?= number_format((float)$hotDrink['price_20oz'], 2, '.', '') ?></td>
+												<th></th>
+												<th class='centerText whiteRow'><h5>8oz</h5></th>
+												<th class='centerText whiteRow'><h5>12oz</h5></th>
+												<th class='centerText whiteRow'><h5>16oz</h5></th>
+												<th class='centerText whiteRow'><h5>20oz</h5></th>
 											</tr>
+										</thead>
+										<tbody>
+<?php 										foreach($allHotDrinks AS $hotDrink){ 	?>
+												<tr>
+													<td class='drinkTitles'><h4 class='lunchTitles'><?= $hotDrink['title'] ?></h4></td>
+<?php 												if($hotDrink['price_8oz'] != '0.00'){		?>
+														<td class='drinkPrices'>$<?= number_format((float)$hotDrink['price_8oz'], 2, '.', '') ?></td>
+<?php 												}
+													else{		?>
+														<td></td>
+<?php 												}			?>
+													<td class='drinkPrices'>$<?= number_format((float)$hotDrink['price_12oz'], 2, '.', '') ?></td>
+													<td class='drinkPrices'>$<?= number_format((float)$hotDrink['price_16oz'], 2, '.', '') ?></td>
+													<td class='drinkPrices'>$<?= number_format((float)$hotDrink['price_20oz'], 2, '.', '') ?></td>
+												</tr>
 <?php 							} 		?>
+											</tbody>
 									</table>
 							</fieldset>
 						</div>
 					</div>
 				</div>
 	    	</div>
-
+	    <!-- Breakfast Menu -->
 	    	<div class="item">	
 	      		<div class="carousel-caption">
 	        		<h5>Drinks&nbsp;&nbsp;<span class='activeMenu'>Breakfast</span>&nbsp;&nbsp;Lunch&nbsp;&nbsp;Treats</h5>
 	      		</div>
 	      		<div class='centerText'>
-					<!-- Blank Blackboard -->
 					<div class='contentDiv'>
-						<h2 class='centerText menuHeaderSpace'><span class='underlineHeader'>Breakfast</span></h2>
-						<!-- Breakfast Food Items -->
-							<div class='row'>
-								<fieldset class='fieldsetting'>
-									<legend class='legendColor'><h3>Breakfast</h3></legend>
-<?php 									foreach($allBreakfast AS $breakfast){		?>
-												
-												<div class='row'>
-													<h4 class='lunchTitles'><?= $breakfast['title'] ?>&nbsp;&nbsp;-&nbsp;<?= $breakfast['price'] ?></h4>
-													<h5 class='specialtyDescription'><?= $breakfast['description'] ?></h5>
-												</div>
+						<div class='row'>
+							<fieldset class='fieldsetting'>
+								<legend class='legendColor'><h2>Breakfast</h2></legend>
+<?php 								foreach($allBreakfast AS $breakfast){		?>						
+										<div class='row'>
+											<h4 class='lunchTitles'><?= $breakfast['title'] ?>&nbsp;&nbsp;-&nbsp;<?= $breakfast['price'] ?></h4>
+											<h5 class='specialtyDescription'><?= $breakfast['description'] ?></h5>
+										</div>
 <?php 									} 		?>
-								</fieldset>
-							</div>
-							<!-- END Breakfast Food Items -->
+							</fieldset>
+						</div>
 					</div>
 				</div>
 	    	</div>
+	    <!-- Lunch Menu -->
 	    	<div class="item">
 	      		<div class="carousel-caption">
 	        		<h5>Drinks&nbsp;&nbsp;Breakfast&nbsp;&nbsp;<span class='activeMenu'>Lunch</span>&nbsp;&nbsp;Treats</h5>
 	      		</div>
 	      		<div class='centerText'>
-					<!-- Blank Blackboard -->
 					<div class='contentDiv'>
-							<h2 class='centerText menuHeaderSpace'><span class='underlineHeader'>Lunch</span></h2>
-							<!-- Specialty Food Items -->
-							<div class='row'>
-								<fieldset class='fieldsetting'>
-									<legend class='legendColor'><h3>Specialties</h3></legend>
-<?php 									$color = 'orange';
-										foreach($allSpecialties AS $specialty){		
-											if($color == 'white'){
-?>
-												<div class='row whiteRow'>
-													<h4 class='lunchTitles'><?= $specialty['title'] ?>&nbsp;&nbsp;-&nbsp;<?= $specialty['price'] ?></h4>
-													<h5 class='specialtyDescription'><?= $specialty['description'] ?></h5>
-												</div>
-<?php 											$color = 'orange';
-											}
-											else{	?>	
-												<div class='row'>
-													<h4 class='lunchTitles'><?= $specialty['title'] ?>&nbsp;&nbsp;-&nbsp;<?= $specialty['price'] ?></h4>
-													<h5 class='specialtyDescription'><?= $specialty['description'] ?></h5>
-												</div>
-<?php 										$color = 'white';
-											} 
-										} 		?>
-								</fieldset>
-							</div>
-							<!-- END Specialty Food Items -->
+					
+						<!-- Specialties -->
+						<div class='row'>
+							<fieldset class='fieldsetting'>
+								<legend class='legendColor'><h2>Specialties</h2></legend>
+<?php								foreach($allSpecialties AS $specialty){		?>
+										<div class='row'>
+											<h4 class='lunchTitles'><?= $specialty['title'] ?>&nbsp;&nbsp;-&nbsp;</h4><h5 class='lunchPrices'><?= $specialty['price'] ?></h5>
+											<h5 class='specialtyDescription'><?= $specialty['description'] ?></h5>
+										</div>
+<?php 										
+									} 		?>
+							</fieldset>
+						</div>
+
+						<!-- Sandwiches -->
+						<div class='row'>
+							<fieldset class='fieldsetting'>
+								<legend class='legendColor'><h2 class='legendColor'>Sandwiches</h2><h5 class='legendNote'>Deli Sanwiches&nbsp;-&nbsp;5&nbsp;&nbsp;&nbsp;Foot Longs&nbsp;-&nbsp;7</h5></legend>
+									<h5 class='menuNote'>One Bread, One Meat, One Veggie, One Cheese, One Spread</h5>
+									<h5 class='menuNote'>Additional Meats - 2, Veggies/Cheeses/Spreads - 1</h5>
+<?php								foreach($allFixingCategories AS $fixingCategory){		?>
+										<div class='row'>
+											<h4 class='lunchTitles'><?= $fixingCategory ?></h4>
+											<h5 class='specialtyDescription'>
+<?php 											foreach($allFixings AS $fixing){	
+													if($fixing['category'] == $fixingCategory){		?>
+														<?= $fixing['type'] ?>,
+<?php												}
+	
+	 											}		?>
+											</h5>
+										</div>
+<?php 										
+									} 		?>
+							</fieldset>
+						</div>
+
+						<!-- Burgers -->
+						<div class='row'>
+							<fieldset class='fieldsetting'>
+								<legend class='legendColor'><h2 class='legendColor'>Burgers</h2><h5 class='legendNote'>Choice of Fries or Chips & Salsa</h5></legend>
+<?php								foreach($allBurgers AS $burger){		?>
+										<div class='row'>
+											<h4 class='lunchTitles'><?= $burger['title'] ?>&nbsp;&nbsp;&nbsp;</h4><h5 class='lunchPrices'>&nbsp;-&nbsp;<?= $burger['price'] ?></h5>
+											<h5 class='specialtyDescription'><?= $burger['description'] ?></h5>
+										</div>
+<?php 										
+									} 		?>
+							</fieldset>
+						</div>
+
+						<!-- Salads -->
+						<div class='row'>
+							<fieldset class='fieldsetting'>
+								<legend class='legendColor'><h2 class='legendColor'>Salads</h2><h5 class='legendNote'>Make any Salad a Wrap $1</h5></legend>
+<?php								foreach($allSalads AS $salad){		?>
+										<div class='row'>
+											<h4 class='lunchTitles'><?= $salad['title'] ?>&nbsp;&nbsp;&nbsp;</h4><h5 class='lunchPrices'>Full&nbsp;-&nbsp;<?= $salad['full_price'] ?>&nbsp;&nbsp;&nbsp;Half&nbsp;-&nbsp;<?= $salad['half_price'] ?></h5>
+											<h5 class='specialtyDescription'><?= $salad['description'] ?></h5>
+										</div>
+<?php 										
+									} 		?>
+							</fieldset>
+						</div>
+
+						<!-- Soups -->
+						<div class='row'>
+							<fieldset class='fieldsetting'>
+								<legend class='legendColor'><h2 class='legendColor'>Soups</h2><h5 class='legendNote'>Cup&nbsp;-&nbsp;12oz&nbsp;&nbsp;&nbsp;&nbsp;Bowl&nbsp;-&nbsp;16oz</h5></legend>
+<?php								foreach($allSoups AS $soup){		?>
+										<div class='row'>
+											<h4 class='lunchTitles'><?= $soup['title'] ?>&nbsp;&nbsp;-&nbsp;</h4><h5 class='lunchPrices'>Bowl&nbsp;-&nbsp;<?= $soup['full_price'] ?>&nbsp;&nbsp;&nbsp;Cup&nbsp;-&nbsp;<?= $soup['half_price'] ?></h5>
+											<h5 class='specialtyDescription'><?= $soup['description'] ?></h5>
+										</div>
+<?php 										
+									} 		?>
+							</fieldset>
+						</div>
+
+						<!-- Kids Items -->
+						<div class='row'>
+							<fieldset class='fieldsetting'>
+								<legend class='legendColor'><h2 class='legendColor'>Kids Items</h2><h5 class='legendNote'>Served with Small Fries or Apple Slices</h5></legend>
+<?php								foreach($allKids AS $kid){		?>
+										<div class='row'>
+											<h4 class='lunchTitles'><?= $kid['title'] ?>&nbsp;&nbsp;-&nbsp;</h4><h5 class='lunchPrices'><?= $kid['price'] ?></h5>
+											<h5 class='specialtyDescription'><?= $kid['description'] ?></h5>
+										</div>
+<?php 										
+									} 		?>
+							</fieldset>
+						</div>
+
 					</div>
 				</div>
 	  		</div>
-	  		<!-- Treats/Snacks Items -->
+	  	<!-- Treats/Snacks Menu -->
 	  		<div class="item">
 	      		<div class="carousel-caption">
 	        		<h5>Drinks&nbsp;&nbsp;Breakfast&nbsp;&nbsp;Lunch&nbsp;&nbsp;<span class='activeMenu'>Treats</span></h5>
 	      		</div>
 	      		<div class='centerText'>
-					<!-- Blank Blackboard -->
 					<div class='contentDiv'>
-						<div class='row'>	
-							<h2 class='centerText menuHeaderSpace'><span class='underlineHeader'>Treats</span></h2>
-						</div>
 						<div class='row'>
-							<table id='treatTable'>
-<?php 						foreach($allTreats AS $treat){   	?>
-							<script type="text/javascript">
-									$(document).ready(function(){
-										$('#tr<?=$treat['id']?>').hide();
-										$('#row<?=$treat['id']?>').click(function(){
-											// alert('<?=$treat['description']?>');
-											$('#tr<?=$treat['id']?>').fadeIn();
-											setTimeout(function(){
-												$('#tr<?=$treat['id']?>').fadeOut();
-											}, 2000);
-										});
-									})
-							</script>
-							<tr id='row<?=$treat['id']?>'>
-								<td class='tableTitle'><h4><?= $treat['title'] ?>&nbsp;&nbsp;&nbsp;&nbsp;</h4></td>
-								<td class='tablePrice'><h4><span class='whiteRow'>.............................</span>&nbsp;&nbsp;&nbsp;&nbsp;$<?= number_format((float)$treat['price'], 2, '.', '') ?></h4></td>
-							</tr>
-							<tr id='tr<?=$treat['id']?>'><td><?=$treat['description']?></td></tr>
-<?php 						}	?>
-							</table>
+							<fieldset class='fieldsetting'>
+								<legend class='legendColor'><h2>Treats</h2></legend>
+								<div class='row whiteRow'>
+									<h6 class='centerText'>Click Items For Ingredients</h7>
+								</div>
+								<table id='treatTable'>
+<?php 							foreach($allTreats AS $treat){   	?>
+								<script type="text/javascript">
+										$(document).ready(function(){
+											$('#tr<?=$treat['id']?>').hide();
+											$('#row<?=$treat['id']?>').click(function(){
+												// alert('<?=$treat['description']?>');
+												$('#tr<?=$treat['id']?>').fadeIn();
+												setTimeout(function(){
+													$('#tr<?=$treat['id']?>').fadeOut();
+												}, 2000);
+											});
+										})
+								</script>
+								<tr id='row<?=$treat['id']?>'>
+									<td class='tableTitle'><h4><?= $treat['title'] ?>&nbsp;&nbsp;&nbsp;&nbsp;</h4></td>
+									<td class='tablePrice'><h4><span class='whiteRow'>.............................</span>&nbsp;&nbsp;&nbsp;&nbsp;$<?= number_format((float)$treat['price'], 2, '.', '') ?></h4></td>
+								</tr>
+								<tr id='tr<?=$treat['id']?>'><td class='tableDescription'><?=$treat['description']?></td></tr>
+	<?php 						}	?>
+								</table>
+						</fieldsetting>
 						</div>
-						<h6 class='centerText'>Click Items For Ingredients</h7>
 					</div>
 				</div>
 	  		</div>
@@ -218,7 +290,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	    	<span class="sr-only">Next</span>
 	  	</a>
 	</div>
-
 </div>
 
 
@@ -231,8 +302,4 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </html>
 
 
-<br><br><br><br><br><br><br><br><br><br><br><br>
-<?php
-var_dump($allBreakfast);
-?>
 

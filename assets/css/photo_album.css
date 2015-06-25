@@ -130,6 +130,15 @@
 		background-color: orange;
 	}
 
-
+/* Photo Album Roll */
+.photoRoll{
+		border: 5px solid white;
+		padding: 2px;
+		width: 100%;
+		height: 100%;
+		display: inline-block;
+		margin: 10px;
+		display: block;
+	}
 
 

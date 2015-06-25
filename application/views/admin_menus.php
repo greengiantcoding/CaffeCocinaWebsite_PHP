@@ -69,6 +69,109 @@
 		</fieldset>	
 		<!-- END FORM: Add New Specialty Item -->
 
+		<!-- FORM: Add New Salad Item -->
+		<fieldset class='menuFormLegend'>
+			<legend class='legendOrange'>Add New Salad Item</legend>
+		<form class="form-horizontal menuForm" action='/new_salad' method='POST'>
+		  	<div class="form-group">
+		    	<label for="title" class="control-label menuFormLabel">Salad Name:</label>
+		      		<input type="text" class="menuFormInput" name='title' id="title" placeholder="&nbsp;&nbsp;Enter name of salad here...">
+		  	</div>
+		  	<div class="form-group">
+		    	<label for="description" class="control-label menuFormLabel">Salad Description:</label>
+		      		<textarea class="menuFormTextarea" name='description' id="description" placeholder='&nbsp;&nbsp;Enter description/ingredients of salad item here.... &nbsp;(optional)'></textarea>
+		  	</div>
+		  	<div class='form-group'>
+		  		<label for='full_price' class="control-label menuFormLabel">Salad Price - Full:</label>
+		  		<input type='number' step='0.01' min='0.01' class="menuFormInput" name='full_price' id='full_price' placeholder='&nbsp;&nbsp;Enter full price here....  $-.--'>
+		  	</div>
+		  	<div class='form-group'>
+		  		<label for='half_price' class="control-label menuFormLabel">Salad Price - Half:</label>
+		  		<input type='number' step='0.01' min='0.01' class="menuFormInput" name='half_price' id='half_price' placeholder='&nbsp;&nbsp;Enter half price here....  $-.--'>
+		  	</div>
+		  	<div class="form-group">
+		      	<button type="submit" class="formButton btn btn-default"><i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;Add New Salad Item To Menu&nbsp;&nbsp;&nbsp;<i class="fa fa-plus"></i></button>
+		  	</div>
+		</form>	
+		</fieldset>	
+		<!-- END FORM: Add New Salad Item -->
+
+		<!-- FORM: Add New Soup Item -->
+		<fieldset class='menuFormLegend'>
+			<legend class='legendOrange'>Add New Soup Item</legend>
+		<form class="form-horizontal menuForm" action='/new_soup' method='POST'>
+		  	<div class="form-group">
+		    	<label for="title" class="control-label menuFormLabel">Soup Name:</label>
+		      		<input type="text" class="menuFormInput" name='title' id="title" placeholder="&nbsp;&nbsp;Enter name of soup item here...">
+		  	</div>
+		  	<div class="form-group">
+		    	<label for="description" class="control-label menuFormLabel">Soup Description:</label>
+		      		<textarea class="menuFormTextarea" name='description' id="description" placeholder='&nbsp;&nbsp;Enter description/ingredients of soup item here.... &nbsp;(optional)'></textarea>
+		  	</div>
+		  	<div class='form-group'>
+		  		<label for='full_price' class="control-label menuFormLabel">Soup Price - Bowl:</label>
+		  		<input type='number' step='0.01' min='0.01' class="menuFormInput" name='full_price' id='full_price' placeholder='&nbsp;&nbsp;Enter price for bowl of soup here....  $-.--'>
+		  	</div>
+		  	<div class='form-group'>
+		  		<label for='half_price' class="control-label menuFormLabel">Soup Price - Cup:</label>
+		  		<input type='number' step='0.01' min='0.01' class="menuFormInput" name='half_price' id='half_price' placeholder='&nbsp;&nbsp;Enter price for cup of soup here....  $-.--'>
+		  	</div>
+		  	<div class="form-group">
+		      	<button type="submit" class="formButton btn btn-default"><i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;Add New Soup Item To Menu&nbsp;&nbsp;&nbsp;<i class="fa fa-plus"></i></button>
+		  	</div>
+		</form>	
+		</fieldset>	
+		<!-- END FORM: Add New Soup Item -->
+
+		<!-- FORM: Add New Burger Item -->
+		<fieldset class='menuFormLegend'>
+			<legend class='legendOrange'>Add New Burger Item</legend>
+		<form class="form-horizontal menuForm" action='/new_burger' method='POST'>
+		  	<div class="form-group">
+		    	<label for="title" class="control-label menuFormLabel">Burger Name:</label>
+		      		<input type="text" class="menuFormInput" name='title' id="title" placeholder="&nbsp;&nbsp;Enter name of burger here...">
+		  	</div>
+		  	<div class="form-group">
+		    	<label for="description" class="control-label menuFormLabel">Burger Description:</label>
+		      		<textarea class="menuFormTextarea" name='description' id="description" placeholder='&nbsp;&nbsp;Enter description/ingredients of burger here.... &nbsp;(optional)'></textarea>
+		  	</div>
+		  	<div class='form-group'>
+		  		<label for='price' class="control-label menuFormLabel">Item Price:</label>
+		  		<input type='number' step='0.01' min='0.01' class="menuFormInput" name='price' id='price' placeholder='&nbsp;&nbsp;Enter price here....  $-.--'>
+		  	</div>
+		  	<div class="form-group">
+		      	<button type="submit" class="formButton btn btn-default"><i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;Add New Burger Item To Menu&nbsp;&nbsp;&nbsp;<i class="fa fa-plus"></i></button>
+		  	</div>
+		</form>	
+		</fieldset>	
+		<!-- END FORM: Add New Burger Item -->
+
+		<!-- FORM: Add New Sandwich Fixing Item -->
+		<fieldset class='menuFormLegend'>
+			<legend class='legendOrange'>Add New Sandwich Fixing Item</legend>
+		<form class="form-horizontal menuForm" action='/new_sandwich_fixing' method='POST'>
+		  	<div class="form-group">
+		    	<label for="category" class="control-label menuFormLabel">Fixing Category Name:</label>
+		      	<select class='menuFormInput' name='category' id='category' style='height:40px;'>
+		      		<option value='Bread'>Breads</option>
+		      		<option value='Meat'>Meats</option>
+		      		<option value='Veggie'>Veggies</option>
+		      		<option value='Cheese'>Cheeses</option>
+		      		<option value='Spread'>Spreads</option>
+		      	</select>
+		  	</div>
+		  	<div class="form-group">
+		    	<label for="type" class="control-label menuFormLabel">Fixing Type:</label>
+		      		<input type='text' class="menuFormTextarea" name='type' id="type" placeholder='&nbsp;&nbsp;Enter type (White/Wheat/Sourdough)'>
+		  	</div>
+		  	<div class="form-group">
+		      	<button type="submit" class="formButton btn btn-default"><i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;Add New Sandwich Fixing Item To Menu&nbsp;&nbsp;&nbsp;<i class="fa fa-plus"></i></button>
+		  	</div>
+		</form>	
+		</fieldset>	
+		<!-- END FORM: Add New Burger Item -->
+
+
 		<!-- FORM: Add New Breakfast Item -->
 		<fieldset class='menuFormLegend'>
 			<legend class='legendOrange'>Add New Breakfast Food Item</legend>
@@ -91,6 +194,29 @@
 		</form>	
 		</fieldset>	
 		<!-- END FORM: Add New Breakfast Item -->
+
+		<!-- FORM: Add New Kid's Item -->
+		<fieldset class='menuFormLegend'>
+			<legend class='legendOrange'>Add New Kid's Food Item</legend>
+		<form class="form-horizontal menuForm" action='/new_kid' method='POST'>
+		  	<div class="form-group">
+		    	<label for="title" class="control-label menuFormLabel">Item Name:</label>
+		      		<input type="text" class="menuFormInput" name='title' id="title" placeholder="&nbsp;&nbsp;Enter name of kid's item here...">
+		  	</div>
+		  	<div class="form-group">
+		    	<label for="description" class="control-label menuFormLabel">Item Description:</label>
+		      		<textarea class="menuFormTextarea" name='description' id="description" placeholder="&nbsp;&nbsp;Enter description/ingredients of kid's item here.... &nbsp;(optional)"></textarea>
+		  	</div>
+		  	<div class='form-group'>
+		  		<label for='price' class="control-label menuFormLabel">Item Price:</label>
+		  		<input type='number' step='0.01' min='0.01' class="menuFormInput" name='price' id='price' placeholder="&nbsp;&nbsp;Enter price here....  $-.--">
+		  	</div>
+		  	<div class="form-group">
+		      	<button type="submit" class="formButton btn btn-default"><i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;Add New Kid's Item To Menu&nbsp;&nbsp;&nbsp;<i class="fa fa-plus"></i></button>
+		  	</div>
+		</form>	
+		</fieldset>	
+		<!-- END FORM: Add New Kid's Item -->
 
 		<!-- FORM: Add New Hot Drink -->
 		<fieldset class='menuFormLegend'>

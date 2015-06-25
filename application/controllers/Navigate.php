@@ -33,7 +33,8 @@ class Navigate extends CI_Controller {
 	}
 
 	public function photo_album(){
-		$this->load->view('photo_album');
+		$allPhotos = $this->Cocina->getAllPhotos();
+		$this->load->view('photo_album', array('allPhotos' => $allPhotos));
 	}
 
 	public function menu(){
@@ -41,6 +42,13 @@ class Navigate extends CI_Controller {
 		$allTreats = $this->Cocina->getAllTreats();
 		$allSpecialties = $this->Cocina->getAllSpecialties();
 		$allBreakfast = $this->Cocina->getAllBreakfast();
-		$this->load->view('menu', array('allHotDrinks' => $allHotDrinks, 'allTreats' => $allTreats, 'allSpecialties' => $allSpecialties, 'allBreakfast' => $allBreakfast));
+		$allSalads = $this->Cocina->getAllSalads();
+		$allSoups = $this->Cocina->getAllSoups();
+		$allBurgers = $this->Cocina->getAllBurgers();
+		$allFixings = $this->Cocina->getAllFixings();
+		$allKids = $this->Cocina->getAllKids();
+		$allFixingCategories = ['Breads', 'Meats', 'Veggies', 'Cheeses', 'Spreads'];
+		$this->load->view('menu', array('allHotDrinks' => $allHotDrinks, 'allTreats' => $allTreats, 'allSpecialties' => $allSpecialties, 'allBreakfast' => $allBreakfast, 'allSalads' => $allSalads, 'allSoups' => $allSoups, 'allBurgers' => $allBurgers, 'allFixingCategories' => $allFixingCategories, 'allFixings' => $allFixings, 'allKids' => $allKids));
 	}
+
 }

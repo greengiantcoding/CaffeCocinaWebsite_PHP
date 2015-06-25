@@ -23,19 +23,14 @@
 
 	<!-- Main Body Content -->
 		
-		<!-- New Photo Form -->
-		<div class='row'>
+		<!-- FORM: Add New Photo -->
+		<fieldset class='menuFormLegend'>
+			<legend class='legendOrange'>Add New Photo To Album</legend>
 			<form class="form-horizontal" action='/add_photo' method='POST' enctype="multipart/form-data"> 
 				<div class="form-group">
-			    	<label for="caption" class="col-sm-4 control-label">Caption:</label>
-			    	<div class="col-sm-3">
-			      		<input type="text" class="form-control" name='caption' id="caption" placeholder="Caption">
-			    	</div>
-			  	</div>
-			  	<div class="form-group">
-			    	<label for="image" class="col-sm-4 control-label">Image:</label>
-			    	<div class="col-sm-3">
-			    		<input type="file" class="form-control" name='image' id="image">
+			    	<label for="file_name" class="col-sm-4 control-label">File Name:</label>
+			    	<div class="col-sm-6">
+			      		<input type="text" class="form-control" name='file_name' id="file_name" placeholder="File Name">
 			    	</div>
 			  	</div>
 			  	<div class="form-group">
@@ -44,15 +39,18 @@
 			    	</div>
 			  	</div>
 			</form>
-		</div>
-		<!-- END New Photo Form -->
-
+		</fieldset>
 
 		<!-- Display All Photos -->
-<?php 	foreach($allPhotos AS $photo){
-echo '<img src="data:image/jpeg;base64,' . base64_encode( $photo['image'] ) . '" />';
-}
-?>
+<?php 	foreach($allPhotos AS $photo){	 ?>
+		<div class='col-xs-6 col-md-2 photoFrame'>
+			<img src="./uploads/<?= $photo['file_name'] ?>" class='photoRoll'>
+			<form action='/delete_photo' method='POST'>
+				<input type='hidden' name='id' value='<?= intval($photo['id']) ?>'>
+				<button type='submit' class='photoBtns'><i class="fa fa-trash-o"></i>&nbsp;&nbsp;DELETE&nbsp;&nbsp;<i class="fa fa-trash-o"></i></button>
+			</form>
+		</div>
+<?php  	}		?>
 		<!-- END Display All Photos -->
 
 	<!-- END Main Body Content -->
@@ -60,7 +58,3 @@ echo '<img src="data:image/jpeg;base64,' . base64_encode( $photo['image'] ) . '"
 </body>
 </html>
 
-<br><br><br><br><br><br><br><br><br><br>
-<?php
-var_dump($allPhotos)
-?>

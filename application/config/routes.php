@@ -65,15 +65,25 @@ $route['menu'] = 'navigate/menu';
 /* Admin Routes */
 $route['login'] = 'admin/index';
 $route['add_photo'] = 'admin/add_photo';
+$route['delete_photo'] = 'admin/delete_photo';
 $route['admin_menus'] = 'admin/admin_menus';
 $route['admin_dashboard'] = 'admin/admin_dashboard';
+
+/* Admin Menu Routes */
 $route['new_treat'] = 'admin/new_treat';
 $route['new_specialty'] = 'admin/new_specialty';
 $route['new_hot_drink'] = 'admin/new_hot_drink';
 $route['new_breakfast'] = 'admin/new_breakfast';
+$route['new_salad'] = 'admin/new_salad';
+$route['new_soup'] = 'admin/new_soup';
+$route['new_burger'] = 'admin/new_burger';
+$route['new_sandwich_fixing'] = 'admin/new_sandwich_fixing';
+$route['new_kid'] = 'admin/new_kid';
 
 /* Application Routes */
 $route['review/new'] = 'admin/review';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+

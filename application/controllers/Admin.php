@@ -11,15 +11,11 @@ class Admin extends CI_Controller {
 			redirect('/navigate');
 		}
 		else{
-			$allPhotos = $this->Cocina->allPhotos();
+			$allPhotos = $this->Cocina->getAllPhotos();
 			$this->load->view('admin_dashboard', array('allPhotos' => $allPhotos));
 		}
 	}
 
-	public function photo_uploaded(){
-		$allPhotos = $this->Cocina->allPhotos();
-		$this->load->view('admin_dashboard', array('allPhotos' => $allPhotos));
-	}
 	public function review(){
 		$review = $this->input->post();
 																				# TO DO: Add If statement for visibility per censor list (review func.)
@@ -30,14 +26,20 @@ class Admin extends CI_Controller {
 
 	public function add_photo(){
 		$photoInfo = $this->input->post();
-		$photoInfo['photo'] = addslashes(file_get_contents($_FILES['image']['tmp_name']));
 		$photoAdded = $this->Cocina->addPhoto($photoInfo);
-		redirect ('/');
+		$allPhotos = $this->Cocina->getAllPhotos();
+		$this->load->view('admin_dashboard', array('allPhotos' => $allPhotos));
+	}
+
+	public function delete_photo(){
+		$photoID = $this->input->post();
+		$remainingPhotos = $this->Cocina->deletePhoto($photoID);
+		$this->load->view('admin_dashboard', array('allPhotos' => $remainingPhotos));
 	}
 
 	public function admin_dashboard(){
-		$allPhotos = $this->Cocina->allPhotos();
-			$this->load->view('admin_dashboard', array('allPhotos' => $allPhotos));
+		$allPhotos = $this->Cocina->getAllPhotos();
+		$this->load->view('admin_dashboard', array('allPhotos' => $allPhotos));
 	}
 
 	public function admin_menus(){
@@ -68,4 +70,33 @@ class Admin extends CI_Controller {
 		redirect ('/admin_menus');
 	}
 
+	public function new_salad(){
+		$saladInfo = $this->input->post();
+		$saladAdded = $this->Cocina->addSalad($saladInfo);
+		redirect ('/admin_menus');
+	}
+
+	public function new_soup(){
+		$soupInfo = $this->input->post();
+		$soupAdded = $this->Cocina->addSoup($soupInfo);
+		redirect ('/admin_menus');
+	}
+
+	public function new_burger(){
+		$burgerInfo = $this->input->post();
+		$burgerAdded = $this->Cocina->addBurger($burgerInfo);
+		redirect ('/admin_menus');
+	}
+
+	public function new_sandwich_fixing(){
+		$fixingInfo = $this->input->post();
+		$fixingAdded = $this->Cocina->addFixing($fixingInfo);
+		redirect ('/admin_menus');
+	}
+
+	public function new_kid(){
+		$kidInfo = $this->input->post();
+		$kidAdded = $this->Cocina->addKid($kidInfo);
+		redirect ('/admin_menus');
+	}
 }

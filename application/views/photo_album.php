@@ -164,7 +164,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!-- END HEADER/NAVBAR -->
 
 <!-- Main Body Content -->
-	
+
+<?php  $counter = 1	?>
+<?php  foreach($allPhotos AS $photo){		?>
+<?php  		if($counter == 4){	?>
+				<br>
+<?php  		}	 ?>
+	<div class='col-xs-6 col-md-3'>
+		<img src="./uploads/<?= $photo['file_name'] ?>" class='photoRoll'>
+	</div>
+<?php  	}	?>
+
 <!-- END Main body Content -->
 
 
