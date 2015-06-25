@@ -64,10 +64,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => 'root',
-	'database' => 'Caffe_Cocina_Schema',
+	'hostname' => 'aa12xgi4v8xkvg2.c0hqhpuscyyr.us-west-2.rds.amazonaws.com',
+	'username' => 'caffeadmin',
+	'password' => 'bestcoffee',
+	'database' => 'ebdb',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
